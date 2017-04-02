@@ -1,0 +1,37 @@
+ul.navbar-ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    color: #FAFAFA;
+    background-color: #37474F;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    text-align: right;
+}
+
+#navBarName{
+    padding-top: 10%;
+    padding-bottom: 1%;
+    padding-right: 7%;
+}
+
+li.navbar-item{
+    padding-right: 7%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+a.navbar-link{
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+li.navbar-active{
+    background-color: #F44336;
+}
+
+li.navbar-inactive:hover{
+    background-color: #263238;
+}
