@@ -39,19 +39,25 @@ function getMainContentElement(innerElement){
     return "<div id='mainContent'>" + innerElement + "</div>";
 }
 
+function getHTMLFragment(url){
+    return $.ajax({
+        url: url,
+        async: false
+    }).responseText;
+}
+
 function getHomeContent(){
-    return "<p>Home</p>";
+    return getHTMLFragment("htmlfrags/home_mc_frag.html");
 }
 
 function getAboutContent(){
-    return "<p>About</p>";
+    return getHTMLFragment("htmlfrags/about_mc_frag.html");
 }
 
 function getProjectsContent(){
-    return "<p>Projects</p>";
+    return getHTMLFragment("htmlfrags/proj_mc_frag.html");
 }
 
 function getContactContent(){
-    return "<p>Contact</p>";
+    return getHTMLFragment("htmlfrags/contact_mc_frag.html");
 }
-
