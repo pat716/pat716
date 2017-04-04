@@ -21,30 +21,75 @@
     <link rel="stylesheet" href="css/navbar_style.css">
     <link rel="stylesheet" href="css/main_content_style.css">
 
+    <!--
+    WHITE: #FAFAFA
+    GRAY: #37474F
+    DARK GRAY: #263238
+    RED: #F44336
+    -->
+
     <script src="js/nav_bar_behavior.js"></script>
 
 </head>
 <body onload="loadPageContent('navBarAbout')">
-<ul class="navbar-ul">
-    <li id="navBarName"><h2>Pat Sweeney</h2></li>
-    <a class="navbar-link" onclick="onClickNavbarElement('navBarAbout')" href="#">
-        <li id="navBarAbout" class="navbar-item navbar-active">
-            <h4>About</h4>
-        </li>
-    </a>
-    <a class="navbar-link" onclick="onClickNavbarElement('navBarProjects')" href="#">
-        <li id="navBarProjects" class="navbar-item navbar-inactive">
-            <h4>Projects</h4>
-        </li>
-    </a>
-    <a class="navbar-link" onclick="onClickNavbarElement('navBarContact')" href="#">
-        <li id="navBarContact" class="navbar-item navbar-inactive">
-            <h4>Contact</h4>
-        </li>
-    </a>
-</ul>
+<nav class="navbar navbar-default">
+    <div id="myNavbarContainer" class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Patrick Sweeney</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li id="navBarAbout" class="active"><a href="#" onclick="onClickNavbarElement('navBarAbout')">About</a></li>
+                <li id="navBarProjects"><a href="#" onclick="onClickNavbarElement('navBarProjects')">Projects</a> </li>
+                <li id="navBarContact"><a href="#" onclick="onClickNavbarElement('navBarContact')">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-<p>Hello</p>
+<!--
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display --*>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling --*>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active my-navbar-active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Link</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse --*>
+    </div><!-- /.container-fluid --*>
+</nav>
+-->
+
 <div id="mainContentContainer">
 
 </div>

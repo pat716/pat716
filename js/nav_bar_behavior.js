@@ -3,11 +3,16 @@
  */
 
 function onClickNavbarElement(elementId){
-    var former = $(".navbar-active"), current = $("#" + elementId);
+    var former = $(".active"), current = $("#" + elementId);
+    former.removeClass("active");
+    current.addClass("active");
+
+    /*
     former.addClass("navbar-inactive");
     former.removeClass("navbar-active");
     current.removeClass("navbar-inactive");
     current.addClass("navbar-active");
+    */
 
     loadPageContent(elementId);
 }
