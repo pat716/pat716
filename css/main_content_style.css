@@ -1,0 +1,17 @@
+#mainContentContainer{
+    padding-top: 2%;
+    margin-left: 25%;
+
+    color: #37474F;
+}
+
+.header-container{
+    height: 100%;
+    display: table;
+}
+
+.header{
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}

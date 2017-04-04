@@ -46,10 +46,6 @@ function getHTMLFragment(url){
     }).responseText;
 }
 
-function getHomeContent(){
-    return getHTMLFragment("htmlfrags/home_mc_frag.html");
-}
-
 function getAboutContent(){
     return getHTMLFragment("htmlfrags/about_mc_frag.html");
 }

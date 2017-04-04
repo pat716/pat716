@@ -19,19 +19,16 @@
 
     <link rel="stylesheet" href="css/basic_style.css">
     <link rel="stylesheet" href="css/navbar_style.css">
+    <link rel="stylesheet" href="css/main_content_style.css">
+
     <script src="js/nav_bar_behavior.js"></script>
 
 </head>
-<body onload="loadPageContent('navBarHome')">
+<body onload="loadPageContent('navBarAbout')">
 <ul class="navbar-ul">
     <li id="navBarName"><h2>Pat Sweeney</h2></li>
-    <a class="navbar-link" onclick="onClickNavbarElement('navBarHome')" href="#">
-        <li id="navBarHome" class="navbar-item navbar-active">
-            <h4>Home</h4>
-        </li>
-    </a>
     <a class="navbar-link" onclick="onClickNavbarElement('navBarAbout')" href="#">
-        <li id="navBarAbout" class="navbar-item navbar-inactive">
+        <li id="navBarAbout" class="navbar-item navbar-active">
             <h4>About</h4>
         </li>
     </a>
