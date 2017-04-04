@@ -5,13 +5,17 @@
     color: #37474F;
 }
 
-.header-container{
+.main-content-header{
     height: 100%;
-    display: table;
+    vertical-align: middle;
 }
 
-.header{
+.main-content-title-line{
+    font-size: larger;
+    font-weight: 600;
+}
+
+.main-content-header div{
     height: 100%;
-    display: table-cell;
     vertical-align: middle;
 }
