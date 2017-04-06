@@ -7,9 +7,12 @@
     text-shadow: none;
 }
 
+.navbar{
+    margin-bottom: 0;
+}
+
 #myNavbarContainer a.navbar-brand{
     font-size: x-large;
-    font-weight: bold;
 }
 
 #myNavbarContainer li.active a{
@@ -23,9 +26,25 @@
 
 #myNavbarContainer li.active a:hover{
     background-color: #F44336;
-
 }
 
 .navbar{
     border-style: none;
+}
+
+#myNavbarContainer ul.navbar-nav{
+    border-style: none;
+}
+
+#myNavbarContainer .navbar-toggle{
+    border-color: #FAFAFA;
+    background-color: #37474F;
+}
+
+#myNavbarContainer .navbar-toggle:hover{
+    background-color: #263238;
+}
+
+#myNavbarContainer .navbar-toggle .icon-bar{
+    background-color: #FAFAFA;
 }

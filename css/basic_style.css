@@ -1,3 +1,23 @@
 body{
-    background-color: #FAFAFA;
+    background-color: #FAFAFC;
+}
+
+.filler-row{
+    height: 25px;
+}
+
+.my-image-wrapper{
+    padding: 5pt;
+    border-style: solid;
+    border-width: thin;
+    border-color: #B0BEC5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
 }

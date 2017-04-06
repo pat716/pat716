@@ -18,7 +18,6 @@ function onClickNavbarElement(elementId){
 }
 
 function loadPageContent(elementId){
-    console.log(elementId);
     var mainContent = "", mainContentContainer = $("#mainContentContainer");
     switch(elementId){
         case "navBarHome":
