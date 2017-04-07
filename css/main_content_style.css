@@ -6,20 +6,17 @@
 }
 
 .main-content-foreground-element{
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px;
     border-radius: 3px;
     height: 100%;
-    background-color: #FFFFFF;
+    background-color: #FBFBFB;
     /* box-shadow: 0 1px 10px #ECEFF1; */
-    box-shadow: 0 1px 10px rgba(0, 5, 30, .05);
+    box-shadow: 0 1px 10px rgba(0, 2, 12, .05);
+
 }
 
 .main-content-foreground-element:hover{
-    /* box-shadow: 0 1px 20px #CFD8DC; */
-    box-shadow: 0 1px 15px rgba(0, 5, 30, .15);
+    box-shadow: 0 1px 30px rgba(0, 2, 12, .15);
 }
 
 #mainContentContainer .row{
@@ -27,8 +24,8 @@
 }
 
 .main-content-text-lead{
-    padding-top: 0px;
     text-align: center;
+    text-shadow: 0 1px 0 #FFFFFF;
 }
 
 .main-content-title-line{
