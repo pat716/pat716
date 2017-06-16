@@ -20,9 +20,6 @@ function onClickNavbarElement(elementId){
 function loadPageContent(elementId){
     var mainContent = "", mainContentContainer = $("#mainContentContainer");
     switch(elementId){
-        case "navBarHome":
-            mainContent = getMainContentElement(getHomeContent());
-            break;
         case "navBarAbout":
             mainContent = getMainContentElement(getAboutContent());
             break;
@@ -37,13 +34,18 @@ function loadPageContent(elementId){
     mainContentContainer.empty();
     mainContentContainer.append(mainContent);
 
+    switch (elementId){
+        case "navBarProjects":
+            projectTabSetup();
+            break;
+    }
 }
 
 function getMainContentElement(innerElement){
     return "<div id='mainContent'>" + innerElement + "</div>";
 }
 
-function getHTMLFragment(url){
+function getFragment(url){
     return $.ajax({
         url: url,
         async: false
@@ -51,13 +53,13 @@ function getHTMLFragment(url){
 }
 
 function getAboutContent(){
-    return getHTMLFragment("htmlfrags/about_mc_frag.html");
+    return getFragment("fragments/html/about_mc_frag.html");
 }
 
 function getProjectsContent(){
-    return getHTMLFragment("htmlfrags/proj_mc_frag.html");
+    return getFragment("fragments/html/proj_mc_frag.html");
 }
 
 function getContactContent(){
-    return getHTMLFragment("htmlfrags/contact_mc_frag.html");
+    return getFragment("fragments/html/contact_mc_frag.html");
 }

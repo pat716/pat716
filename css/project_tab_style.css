@@ -1,0 +1,61 @@
+.slide-change-animation{
+
+}
+div.project-row{
+    padding-top: 10px;
+}
+
+div.project-nav-button-col{
+    height: 100%;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+button.project-nav-button{
+    height: 100%;
+    background-image: none;
+    border-color: #B0BEC5;
+    color: #B0BEC5;
+    vertical-align: middle;
+}
+
+button.project-nav-button:hover{
+    background-color: #FFFFFF;
+    border-color: #B0BEC5;
+    color: #B0BEC5;
+}
+
+button.project-nav-button:active, button.project-nav-button:focus{
+    outline: none !important;
+    background-color: #FFFFFF !important;
+    border-color: #B0BEC5 !important;
+    color: #B0BEC5 !important;
+}
+
+div.img-container{
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 30px;
+}
+
+.img-transition{
+    position: relative;
+    margin: 0 auto;
+}
+
+img.background-image{
+    position: absolute;
+}
+
+#impressionistProjectText{
+    text-align: center;
+}
+
+div.project-slide-text{
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 20px;
+}

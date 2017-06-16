@@ -16,7 +16,7 @@
 }
 
 .main-content-foreground-element:hover{
-    box-shadow: 0 1px 30px rgba(0, 2, 12, .15);
+    box-shadow: 0 1px 30px rgba(0, 2, 12, .12);
 }
 
 #mainContentContainer .row{
@@ -38,3 +38,6 @@
     padding-right: 30px;
 }
 
+div.bottom-padding{
+    padding-bottom: 30px;
+}

@@ -1,0 +1,2 @@
+This is an Android app I made allowing the user to create a customized "impressionist" version of an image by sampling
+the colors of the original bitmap and making large strokes using those colors.

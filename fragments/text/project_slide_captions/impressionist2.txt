@@ -1,0 +1,3 @@
+A variety of brush shapes and sampling modes are available. Soft brushes make several marks at once using different
+sample sizes, creating a soft, hazy look. The line and splatter brushes emulate long, connected strokes and splattered
+paint.

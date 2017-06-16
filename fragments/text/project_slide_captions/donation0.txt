@@ -1,0 +1,1 @@
+This is a skeleton Android app I made with three of my classmates for microdonations.

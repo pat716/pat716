@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="css/basic_style.css">
     <link rel="stylesheet" href="css/navbar_style.css">
+    <link rel="stylesheet" href="css/project_tab_style.css">
     <link rel="stylesheet" href="css/main_content_style.css">
 
     <!--
@@ -29,9 +30,10 @@
     -->
 
     <script src="js/nav_bar_behavior.js"></script>
+    <script src="js/project_navigation.js"></script>
 
 </head>
-<body onload="loadPageContent('navBarAbout')">
+<body onload="loadPageContent('navBarProjects')">
 <nav class="navbar navbar-default navbar-fixed-top">
     <div id="myNavbarContainer" class="container-fluid">
         <div class="navbar-header">
@@ -41,12 +43,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#" onclick="onClickNavbarElement('navBarAbout')"><strong>Pat Sweeney</strong></a>
+            <a class="navbar-brand" href="#" onclick="onClickNavbarElement('navBarProjects')"><strong>Pat Sweeney</strong></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li id="navBarAbout" class="active"><a href="#" onclick="onClickNavbarElement('navBarAbout')">About</a></li>
-                <li id="navBarProjects"><a href="#" onclick="onClickNavbarElement('navBarProjects')">Projects</a> </li>
+                <li id="navBarAbout"><a href="#" onclick="onClickNavbarElement('navBarAbout')">About</a></li>
+                <li id="navBarProjects" class="active"><a href="#" onclick="onClickNavbarElement('navBarProjects')">Projects</a> </li>
                 <li id="navBarContact"><a href="#" onclick="onClickNavbarElement('navBarContact')">Contact</a></li>
             </ul>
         </div>

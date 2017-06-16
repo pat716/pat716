@@ -1,0 +1,2 @@
+The user first selects an image from internal storage. The loaded image is displayed on the left, with an empty canvas
+of the same dimensions on the right.
