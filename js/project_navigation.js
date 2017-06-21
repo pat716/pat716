@@ -13,15 +13,71 @@ function projectTabSetup(){
     var donationImageUrl = getImageUrlForProjectPanelState("donation", 0);
 
     $("#impressionistProjectImage").attr("url", impressionistImageUrl);
-    $("#impressionistProjectBackgroundImage").attr("url", impressionistImageUrl);
+    $("#impressionistProjectBackgroundImage").fadeOut(0, fadeEasing);
     $("#donationProjectImage").attr("url", donationImageUrl);
-    $("#donationProjectBackgroundImage").attr("url", donationImageUrl);
+    $("#donationProjectBackgroundImage").fadeOut(0, fadeEasing);
     $("#impressionistProjectText").html(getTextForProjectPanelState("impressionist", 0));
     $("#donationProjectText").html(getTextForProjectPanelState("donation", 0));
 }
 
+function getImageSizeForWindowSize(){
+    var windowWidth = $(window).width();
+    if(windowWidth < 1600){
+        return "medium";
+    } else if(windowWidth < 1200){
+        return "small";
+    }
+    return "large";
+}
+
+function getSlideNum(projectId){
+    switch (projectId){
+        case "impressionist":
+            return impressionistSlide;
+        case "donation":
+            return donationSlide;
+    }
+    return 0;
+}
+
+function incrementSlide(projectId){
+    switch (projectId){
+        case "impressionist":
+            impressionistSlide = getBoundedSlideNum(projectId, impressionistSlide + 1);
+            break;
+        case "donation":
+            donationSlide = getBoundedSlideNum(projectId, donationSlide + 1);
+            break;
+    }
+}
+
+function decrementSlide(projectId){
+    switch (projectId){
+        case "impressionist":
+            impressionistSlide = getBoundedSlideNum(projectId, impressionistSlide - 1);
+            break;
+        case "donation":
+            donationSlide = getBoundedSlideNum(projectId, donationSlide - 1);
+            break;
+    }
+}
+
+function getSlideCount(projectId){
+    switch (projectId){
+        case "impressionist":
+            return impressionistSlideCount;
+        case "donation":
+            return donationSlideCount;
+    }
+    return 0;
+}
+
+function getBoundedSlideNum(projectId, slideNum){
+    return Math.max(0, Math.min(getSlideCount(projectId) - 1, slideNum));
+}
+
 function getImageUrlForProjectPanelState(projectId, slideNum){
-    var urlString = "images/";
+    var urlString = "images/" + getImageSizeForWindowSize() + "/";
 
     switch (projectId){
         case "impressionist":
@@ -108,22 +164,9 @@ function getTextForProjectPanelState(projectId, slideNum){
 }
 
 function updateButtonsForProject(projectId){
-    var slideNumber = 0, slideCount = 1, leftButton = null, rightButton = null;
-
-    switch (projectId){
-        case "impressionist":
-            slideNumber = impressionistSlide;
-            slideCount = impressionistSlideCount;
-            leftButton = $("#impressionistLeftButton");
-            rightButton = $("#impressionistRightButton");
-            break;
-        case "donation":
-            slideNumber = donationSlide;
-            slideCount = donationSlideCount;
-            leftButton = $("#donationLeftButton");
-            rightButton = $("#donationRightButton");
-            break;
-    }
+    var slideNumber = getSlideNum(projectId), slideCount = getSlideCount(projectId),
+        leftButton = $("#" + projectId + "LeftButton"),
+        rightButton = $("#" + projectId + "RightButton");
 
     if(leftButton === null || rightButton === null) return;
 
@@ -140,16 +183,28 @@ function updateButtonsForProject(projectId){
     }
 }
 
+function changeProjectImage(projectId, direction){
+    var imgElement = $("#" + projectId + "ProjectImage"),
+        backgroundImgElement = $("#" + projectId + "ProjectBackgroundImage");
+    var newSlideNum = getBoundedSlideNum(projectId, getSlideNum(projectId) + direction);
+    var preloadSlideNum = getBoundedSlideNum(projectId, newSlideNum + 1);
+    var newImgUrl = getImageUrlForProjectPanelState(projectId, newSlideNum),
+        preloadImgUrl = getImageUrlForProjectPanelState(projectId, preloadSlideNum);
 
-function imageElementFadeTransition(imgElement, backgroundImgElement, nextImgUrl){
-    imgElement.attr("src", nextImgUrl);
-    backgroundImgElement.fadeOut(fadeDuration, fadeEasing, function () {
-        backgroundImgElement.attr("src", nextImgUrl);
-        backgroundImgElement.fadeIn(0, fadeEasing);
+    if(backgroundImgElement.attr("src") !== newImgUrl){
+        backgroundImgElement.attr("src", newImgUrl);
+    }
+    backgroundImgElement.fadeIn(fadeDuration, fadeEasing, function () {
+        imgElement.attr("src", newImgUrl);
+        backgroundImgElement.fadeOut(0, fadeEasing);
+        backgroundImgElement.attr("src", preloadImgUrl);
     });
 }
 
-function textElementFadeTransition(textElement, newText){
+function changeProjectText(projectId, direction){
+    var textElement = $("#" + projectId + "ProjectText");
+    var newText = getTextForProjectPanelState(projectId,
+        getBoundedSlideNum(projectId, getSlideNum(projectId) + direction));
     textElement.fadeOut(fadeDuration/2, fadeEasing, function () {
         textElement.html(newText);
         textElement.fadeIn(fadeDuration/2, fadeEasing);
@@ -157,67 +212,16 @@ function textElementFadeTransition(textElement, newText){
 }
 
 function loadNextSlide(projectId){
-    switch (projectId){
-        case "impressionist":
-            impressionistSlide += 1;
-            if(impressionistSlide > impressionistSlideCount - 1){
-                impressionistSlide = impressionistSlideCount - 1;
-            }
-
-            var imgElement = $("#impressionistProjectImage"), textElement = $("#impressionistProjectText");
-            var backgroundImgElement = $("#impressionistProjectBackgroundImage");
-            imageElementFadeTransition(imgElement, backgroundImgElement,
-                getImageUrlForProjectPanelState(projectId, impressionistSlide));
-            textElementFadeTransition(textElement, getTextForProjectPanelState(projectId, impressionistSlide));
-            break;
-        case "donation":
-            donationSlide += 1;
-            if(donationSlide > donationSlideCount - 1){
-                donationSlide = donationSlideCount - 1;
-            }
-
-            imgElement = $("#donationProjectImage");
-            textElement = $("#donationProjectText");
-            backgroundImgElement = $("#donationProjectBackgroundImage");
-            imageElementFadeTransition(imgElement, backgroundImgElement,
-                getImageUrlForProjectPanelState(projectId, donationSlide));
-            textElementFadeTransition(textElement, getTextForProjectPanelState(projectId, donationSlide));
-            break;
-    }
-
+    changeProjectImage(projectId, 1);
+    changeProjectText(projectId, 1);
+    incrementSlide(projectId);
     updateButtonsForProject(projectId);
 }
 
 
 function loadPrevSlide(projectId){
-    switch (projectId){
-        case "impressionist":
-            impressionistSlide -= 1;
-            if(impressionistSlide < 0){
-                impressionistSlide = 0;
-            }
-
-            var imgElement = $("#impressionistProjectImage"), textElement = $("#impressionistProjectText");
-            var backgroundImgElement = $("#impressionistProjectBackgroundImage");
-
-            imageElementFadeTransition(imgElement, backgroundImgElement,
-                getImageUrlForProjectPanelState(projectId, impressionistSlide));
-            textElementFadeTransition(textElement, getTextForProjectPanelState(projectId, impressionistSlide));
-            break;
-        case "donation":
-            donationSlide -= 1;
-            if(donationSlide < 0){
-                donationSlide = 0;
-            }
-
-            imgElement = $("#donationProjectImage");
-            textElement = $("#donationProjectText");
-            backgroundImgElement = $("#donationProjectBackgroundImage");
-            imageElementFadeTransition(imgElement, backgroundImgElement,
-                getImageUrlForProjectPanelState(projectId, donationSlide));
-            textElementFadeTransition(textElement, getTextForProjectPanelState(projectId, donationSlide));
-            break;
-    }
-
+    changeProjectImage(projectId, -1);
+    changeProjectText(projectId, -1);
+    decrementSlide(projectId);
     updateButtonsForProject(projectId);
 }
