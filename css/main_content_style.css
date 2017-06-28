@@ -11,12 +11,8 @@
     height: 100%;
     background-color: #FBFBFB;
     /* box-shadow: 0 1px 10px #ECEFF1; */
-    box-shadow: 0 1px 10px rgba(0, 2, 12, .05);
+    box-shadow: 0 1px 10px rgba(0, 2, 25, .08);
 
-}
-
-.main-content-foreground-element:hover{
-    box-shadow: 0 1px 30px rgba(0, 2, 12, .12);
 }
 
 #mainContentContainer .row{

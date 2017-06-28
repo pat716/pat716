@@ -14,6 +14,7 @@ function onClickNavbarElement(elementId){
     current.addClass("navbar-active");
     */
 
+
     loadPageContent(elementId);
 }
 
@@ -34,10 +35,8 @@ function loadPageContent(elementId){
     mainContentContainer.empty();
     mainContentContainer.append(mainContent);
 
-    switch (elementId){
-        case "navBarProjects":
-            projectTabSetup();
-            break;
+    if(elementId === "navBarProjects"){
+        projectTabSetup();
     }
 }
 

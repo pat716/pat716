@@ -1,3 +1,7 @@
+.project-content-row{
+    padding-bottom: 30px;
+}
+
 div.project-row{
     padding-top: 10px;
 }
@@ -12,7 +16,6 @@ div.project-nav-button-col{
 }
 
 button.project-nav-button{
-    height: 100%;
     background-image: none;
     border-color: #B0BEC5;
     color: #B0BEC5;
@@ -32,9 +35,7 @@ button.project-nav-button:active, button.project-nav-button:focus{
     color: #B0BEC5 !important;
 }
 
-div.img-container{
-    padding-left: 3px;
-    padding-right: 3px;
+#impressionistProjectImage{
     padding-bottom: 30px;
 }
 
@@ -52,12 +53,5 @@ img.background-image{
 }
 
 .project-slide-text{
-    padding-left: 3px;
-    padding-right: 3px;
-    padding-bottom: 20px;
+    text-align: center;
 }
-
-.project-nav-button{
-    height: 100%;
-}
-

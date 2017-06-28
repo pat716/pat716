@@ -4,6 +4,13 @@
 
 var impressionistSlide = 0, impressionistSlideCount = 8, donationSlide = 0, donationSlideCount = 9;
 var fadeDuration = 600, fadeEasing = "swing";
+var textMarginAnimationDuration = 200, textMarginAnimationTimeout = 100;
+
+var textAdjustTimeout;
+$(window).on("resize", function () {
+    updateButtonVerticalMargins();
+    updateDonationTextTopMargin();
+});
 
 function projectTabSetup(){
     impressionistSlide = 0;
@@ -183,6 +190,31 @@ function updateButtonsForProject(projectId){
     }
 }
 
+function updateButtonVerticalMargins(){
+    var impressionistImageHeight = $("#impressionistProjectImage").height(),
+        donationImageHeight = $("#donationProjectImage").height();
+
+    $("button.impressionist-button").each(function () {
+        $(this).css("margin-top", impressionistImageHeight/2 - $(this).height());
+    });
+    $("button.donation-button").each(function () {
+        $(this).css("margin-top", donationImageHeight/2 - $(this).height());
+    });
+}
+
+function updateDonationTextTopMargin(){
+    var donationImageHeight = $("#donationProjectImage").height(),
+        donationTextElement = $("#donationProjectText");
+    donationTextElement.css("margin-top", donationImageHeight/2 - donationTextElement.height()/2);
+}
+
+function updateVerticalMargins(){
+    updateButtonVerticalMargins();
+    updateDonationTextTopMargin();
+}
+
+
+
 function changeProjectImage(projectId, direction){
     var imgElement = $("#" + projectId + "ProjectImage"),
         backgroundImgElement = $("#" + projectId + "ProjectBackgroundImage");
@@ -207,6 +239,7 @@ function changeProjectText(projectId, direction){
         getBoundedSlideNum(projectId, getSlideNum(projectId) + direction));
     textElement.fadeOut(fadeDuration/2, fadeEasing, function () {
         textElement.html(newText);
+        if(projectId === "donation") updateDonationTextTopMargin(false);
         textElement.fadeIn(fadeDuration/2, fadeEasing);
     })
 }
