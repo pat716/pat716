@@ -29,10 +29,20 @@
     RED: #F44336
     -->
 
+    <script src="js/listener_setup.js"></script>
     <script src="js/nav_bar_behavior.js"></script>
     <script src="js/project_navigation.js"></script>
+    <script src="js/modal_behavior.js"></script>
 </head>
 <body onload="loadPageContent('navBarAbout')">
+<div id="modalImageContainer" class="modal pull-center" onclick="hideModalImage()">
+    <a id="modalImageClickableElement" href="#">
+    <div id="modalImageVisibleContainer">
+            <img class="img-responsive" id="modalImage" onload="updateModalImageContainerProperties()">
+
+    </div>
+    </a>
+</div>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div id="myNavbarContainer" class="container-fluid">
         <div class="navbar-header">
@@ -45,15 +55,20 @@
             <a class="navbar-brand" href="#" onclick="onClickNavbarElement('navBarProjects')"><strong>Pat Sweeney</strong></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li id="navBarAbout" class="active"><a href="#" onclick="onClickNavbarElement('navBarAbout')">About</a></li>
-                <li id="navBarProjects"><a href="#" onclick="onClickNavbarElement('navBarProjects')">Projects</a> </li>
-                <li id="navBarContact"><a href="#" onclick="onClickNavbarElement('navBarContact')">Contact</a></li>
+            <ul class="nav navbar-nav" data-toggle="collapse" data-target=".navbar-collapse.in">
+                <li id="navBarAbout" class="active">
+                    <a href="#" onclick="onClickNavbarElement('navBarAbout')">About</a>
+                </li>
+                <li id="navBarProjects">
+                    <a href="#" onclick="onClickNavbarElement('navBarProjects')">Projects</a>
+                </li>
+                <li id="navBarContact">
+                    <a href="#" onclick="onClickNavbarElement('navBarContact')">Contact</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-
 <div id="mainContentContainer">
 
 </div>

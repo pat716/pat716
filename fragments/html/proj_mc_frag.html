@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-1 col-md-1 main-content-padding"></div>
@@ -17,6 +18,7 @@
         <div class="col-lg-1 col-md-1 main-content-padding"></div>
     </div>
     <div id="impressionistContentRow" class="row">
+        <a name="impressionist"></a>
         <div class="col-lg-1 col-md-1 main-content-padding"></div>
         <div class="col-lg-10 col-md-10 ">
             <div class="main-content-foreground-element main-content-foreground-element-full-width">
@@ -39,13 +41,18 @@
                             <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                                 <div class="img-container">
                                     <div class="img-transition">
-                                        <img id="impressionistProjectBackgroundImage"
-                                             class="img-responsive project-image background-image"
-                                             src="images/large/impressionist/norman_loaded.png">
-                                        <img onload="updateVerticalMargins()"
-                                             id="impressionistProjectImage"
-                                             class="img-responsive project-image"
-                                             src="images/large/impressionist/norman_start.png">
+                                        <button id="impressionistProjectImageButton"
+                                        class="btn img-enlarge-button"
+                                        onclick="launchModalImageForCurrentSlide('impressionist')">
+                                            <img id="impressionistProjectBackgroundImage"
+                                                 class="img-responsive project-image background-image"
+                                                 src="images/large/impressionist/norman_loaded.png">
+                                            <img onload="updateVerticalMargins()"
+                                                     id="impressionistProjectImage"
+                                                     class="img-responsive project-image"
+                                                     src="images/large/impressionist/norman_start.png"
+                                            >
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -68,6 +75,7 @@
     </div>
     <div class="bottom-padding"></div>
     <div id="donationContentRow" class="row">
+        <a name="donation"></a>
         <div class="col-lg-1 col-md-1 main-content-padding"></div>
         <div class="col-lg-10 col-md-10">
             <div class="main-content-foreground-element main-content-foreground-element-full-width">
@@ -93,13 +101,17 @@
                             <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6">
                                 <div class="img-container">
                                     <div class="img-transition">
-                                        <img id="donationProjectBackgroundImage"
-                                             class="img-responsive project-image background-image"
-                                             src="images/large/donation/home.png">
-                                        <img onload="updateVerticalMargins()"
-                                             id="donationProjectImage"
-                                             class="img-responsive project-image"
-                                             src="images/large/donation/login.png">
+                                        <button id="donationProjectImageButton"
+                                                class="btn img-enlarge-button"
+                                                onclick="launchModalImageForCurrentSlide('donation')">
+                                            <img id="donationProjectBackgroundImage"
+                                                 class="img-responsive project-image background-image"
+                                                 src="images/large/donation/home.png">
+                                            <img onload="updateVerticalMargins()"
+                                                 id="donationProjectImage"
+                                                 class="img-responsive project-image"
+                                                 src="images/large/donation/login.png">
+                                        </button>
                                     </div>
                                 </div>
                             </div>

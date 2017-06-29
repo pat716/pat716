@@ -35,8 +35,13 @@ button.project-nav-button:active, button.project-nav-button:focus{
     color: #B0BEC5 !important;
 }
 
-#impressionistProjectImage{
-    padding-bottom: 30px;
+.img-enlarge-button{
+    border: none;
+    padding: 0;
+}
+
+#impressionistProjectImageButton{
+    margin-bottom: 30px;
 }
 
 .img-transition{

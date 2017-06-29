@@ -3,26 +3,21 @@
  */
 
 var impressionistSlide = 0, impressionistSlideCount = 8, donationSlide = 0, donationSlideCount = 9;
-var fadeDuration = 600, fadeEasing = "swing";
-var textMarginAnimationDuration = 200, textMarginAnimationTimeout = 100;
+var projectSlideFadeDuration = 400, projectSlideFadeEasing = "swing";
 
 var textAdjustTimeout;
-$(window).on("resize", function () {
-    updateButtonVerticalMargins();
-    updateDonationTextTopMargin();
-});
 
 function projectTabSetup(){
     impressionistSlide = 0;
     donationSlide = 0;
 
-    var impressionistImageUrl = getImageUrlForProjectPanelState("impressionist", 0);
-    var donationImageUrl = getImageUrlForProjectPanelState("donation", 0);
+    var impressionistImageUrl = getImageUrlForProjectPanelState("impressionist", 0, false);
+    var donationImageUrl = getImageUrlForProjectPanelState("donation", 0, false);
 
     $("#impressionistProjectImage").attr("url", impressionistImageUrl);
-    $("#impressionistProjectBackgroundImage").fadeOut(0, fadeEasing);
+    $("#impressionistProjectBackgroundImage").fadeOut(0, projectSlideFadeEasing);
     $("#donationProjectImage").attr("url", donationImageUrl);
-    $("#donationProjectBackgroundImage").fadeOut(0, fadeEasing);
+    $("#donationProjectBackgroundImage").fadeOut(0, projectSlideFadeEasing);
     $("#impressionistProjectText").html(getTextForProjectPanelState("impressionist", 0));
     $("#donationProjectText").html(getTextForProjectPanelState("donation", 0));
 }
@@ -83,8 +78,13 @@ function getBoundedSlideNum(projectId, slideNum){
     return Math.max(0, Math.min(getSlideCount(projectId) - 1, slideNum));
 }
 
-function getImageUrlForProjectPanelState(projectId, slideNum){
-    var urlString = "images/" + getImageSizeForWindowSize() + "/";
+function getImageUrlForProjectPanelState(projectId, slideNum, forceOriginal){
+    var urlString = "images/";
+    if (forceOriginal){
+        urlString += "original/";
+    } else {
+        urlString += getImageSizeForWindowSize() + "/";
+    }
 
     switch (projectId){
         case "impressionist":
@@ -220,15 +220,15 @@ function changeProjectImage(projectId, direction){
         backgroundImgElement = $("#" + projectId + "ProjectBackgroundImage");
     var newSlideNum = getBoundedSlideNum(projectId, getSlideNum(projectId) + direction);
     var preloadSlideNum = getBoundedSlideNum(projectId, newSlideNum + 1);
-    var newImgUrl = getImageUrlForProjectPanelState(projectId, newSlideNum),
-        preloadImgUrl = getImageUrlForProjectPanelState(projectId, preloadSlideNum);
+    var newImgUrl = getImageUrlForProjectPanelState(projectId, newSlideNum, false),
+        preloadImgUrl = getImageUrlForProjectPanelState(projectId, preloadSlideNum, false);
 
     if(backgroundImgElement.attr("src") !== newImgUrl){
         backgroundImgElement.attr("src", newImgUrl);
     }
-    backgroundImgElement.fadeIn(fadeDuration, fadeEasing, function () {
+    backgroundImgElement.fadeIn(projectSlideFadeDuration, projectSlideFadeEasing, function () {
         imgElement.attr("src", newImgUrl);
-        backgroundImgElement.fadeOut(0, fadeEasing);
+        backgroundImgElement.fadeOut(0, projectSlideFadeEasing);
         backgroundImgElement.attr("src", preloadImgUrl);
     });
 }
@@ -237,10 +237,10 @@ function changeProjectText(projectId, direction){
     var textElement = $("#" + projectId + "ProjectText");
     var newText = getTextForProjectPanelState(projectId,
         getBoundedSlideNum(projectId, getSlideNum(projectId) + direction));
-    textElement.fadeOut(fadeDuration/2, fadeEasing, function () {
+    textElement.fadeOut(projectSlideFadeDuration/2, projectSlideFadeEasing, function () {
         textElement.html(newText);
         if(projectId === "donation") updateDonationTextTopMargin(false);
-        textElement.fadeIn(fadeDuration/2, fadeEasing);
+        textElement.fadeIn(projectSlideFadeDuration/2, projectSlideFadeEasing);
     })
 }
 
@@ -257,4 +257,11 @@ function loadPrevSlide(projectId){
     changeProjectText(projectId, -1);
     decrementSlide(projectId);
     updateButtonsForProject(projectId);
+}
+
+
+function launchModalImageForCurrentSlide(projectId){
+    $("#modalImage").attr("src", getImageUrlForProjectPanelState(projectId, getSlideNum(projectId), true));
+    $("#modalImageClickableElement").attr("href", "#" + projectId);
+    showModalImage();
 }
