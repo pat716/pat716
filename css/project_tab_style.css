@@ -35,12 +35,20 @@ button.project-nav-button:active, button.project-nav-button:focus{
     color: #B0BEC5 !important;
 }
 
+button.project-nav-button:disabled:hover{
+    border-color: #B0BEC5;
+}
+
+button.project-nav-button:disabled:active{
+    background-color: #E0E0E0 !important;
+}
+
 .img-enlarge-button{
     border: none;
     padding: 0;
 }
 
-#impressionistProjectImageButton{
+#impressionistProjectImage{
     margin-bottom: 30px;
 }
 
@@ -51,6 +59,10 @@ button.project-nav-button:active, button.project-nav-button:focus{
 
 img.background-image{
     position: absolute;
+}
+
+img.project-image{
+    cursor: pointer;
 }
 
 #impressionistProjectText{

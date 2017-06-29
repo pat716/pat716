@@ -5,8 +5,6 @@
 var impressionistSlide = 0, impressionistSlideCount = 8, donationSlide = 0, donationSlideCount = 9;
 var projectSlideFadeDuration = 400, projectSlideFadeEasing = "swing";
 
-var textAdjustTimeout;
-
 function projectTabSetup(){
     impressionistSlide = 0;
     donationSlide = 0;
@@ -212,8 +210,6 @@ function updateVerticalMargins(){
     updateButtonVerticalMargins();
     updateDonationTextTopMargin();
 }
-
-
 
 function changeProjectImage(projectId, direction){
     var imgElement = $("#" + projectId + "ProjectImage"),

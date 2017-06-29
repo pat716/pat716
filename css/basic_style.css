@@ -42,18 +42,20 @@ body{
     margin: auto;
     height: fit-content;
     max-height: 95%;
-    padding: 20px;
+    padding: 10px;
     background-color: #FAFAFA;
     border-radius: 5px;
     box-shadow: 0 0 50px rgba(0, 0, 5, .3);
-}
-
-#modalImageClickableElement{
-    width: fit-content;
+    cursor: pointer;
 }
 
 #modalImage{
     float: none;
     margin: auto;
     max-height: 100%;
+}
+
+button:disabled{
+    cursor: default !important;
+    background-color: #E0E0E0 !important;
 }
