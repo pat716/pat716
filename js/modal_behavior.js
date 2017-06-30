@@ -16,11 +16,13 @@ function hideModalImage(){
     var modalContainer = $("#modalImageContainer");
     modalContainer.fadeOut(modalFadeDuration, modalFadeEasing, function () {
         modalContainer.css("display", "none");
+        modalContainer.removeAttr("src");
     });
 }
 
 function updateModalImageContainerProperties(){
     var visibleContainer = $("#modalImageVisibleContainer");
-    var availableSpace = $(window).height() - visibleContainer.height();
-    visibleContainer.css("margin-top", availableSpace/4);
+    var availableSpace = $(window).height() - (visibleContainer.height());
+    availableSpace -= parseInt(visibleContainer.css("padding-top")) + parseInt(visibleContainer.css("padding-bottom"));
+    visibleContainer.css("margin-top", (availableSpace)/2);
 }

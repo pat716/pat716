@@ -6,6 +6,7 @@ $(window).on("resize", function () {
     updateButtonVerticalMargins();
     updateDonationTextTopMargin();
     updateModalImageContainerProperties();
+    updateProjectImageSize();
 });
 
 

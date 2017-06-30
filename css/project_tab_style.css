@@ -63,6 +63,7 @@ img.background-image{
 
 img.project-image{
     cursor: pointer;
+    margin: auto;
 }
 
 #impressionistProjectText{

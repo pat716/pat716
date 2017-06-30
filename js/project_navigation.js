@@ -206,9 +206,20 @@ function updateDonationTextTopMargin(){
     donationTextElement.css("margin-top", donationImageHeight/2 - donationTextElement.height()/2);
 }
 
+function updateProjectImageSize(){
+    var availableHeight = $(window).height() - $("#bs-example-navbar-collapse-1").height();
+    $(".project-image").css("max-height", availableHeight * 0.65);
+    $(".background-image").css("max-height", availableHeight * 0.65);
+
+    $("#impressionistProjectBackgroundImage").css("margin-left", $("#impressionistProjectImage").css("margin-left"));
+    $("#donationProjectBackgroundImage").css("margin-left", $("#donationProjectImage").css("margin-left"));
+}
+
 function updateVerticalMargins(){
     updateButtonVerticalMargins();
     updateDonationTextTopMargin();
+    updateProjectImageSize();
+    updateProjectImageSize();
 }
 
 function changeProjectImage(projectId, direction){
@@ -258,6 +269,5 @@ function loadPrevSlide(projectId){
 
 function launchModalImageForCurrentSlide(projectId){
     $("#modalImage").attr("src", getImageUrlForProjectPanelState(projectId, getSlideNum(projectId), true));
-    $("#modalImageClickableElement").attr("href", "#" + projectId);
     showModalImage();
 }
