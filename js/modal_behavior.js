@@ -24,5 +24,5 @@ function updateModalImageContainerProperties(){
     var visibleContainer = $("#modalImageVisibleContainer");
     var availableSpace = $(window).height() - (visibleContainer.height());
     availableSpace -= parseInt(visibleContainer.css("padding-top")) + parseInt(visibleContainer.css("padding-bottom"));
-    visibleContainer.css("margin-top", (availableSpace)/2);
+    visibleContainer.css("margin-top", Math.max(0, (availableSpace)/2));
 }

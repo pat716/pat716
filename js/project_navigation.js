@@ -193,17 +193,17 @@ function updateButtonVerticalMargins(){
         donationImageHeight = $("#donationProjectImage").height();
 
     $("button.impressionist-button").each(function () {
-        $(this).css("margin-top", impressionistImageHeight/2 - $(this).height());
+        $(this).css("margin-top", Math.max(0, impressionistImageHeight/2 - $(this).height()));
     });
     $("button.donation-button").each(function () {
-        $(this).css("margin-top", donationImageHeight/2 - $(this).height());
+        $(this).css("margin-top", Math.max(0, donationImageHeight/2 - $(this).height()));
     });
 }
 
 function updateDonationTextTopMargin(){
     var donationImageHeight = $("#donationProjectImage").height(),
         donationTextElement = $("#donationProjectText");
-    donationTextElement.css("margin-top", donationImageHeight/2 - donationTextElement.height()/2);
+    donationTextElement.css("margin-top", Math.max(0, donationImageHeight/2 - donationTextElement.height()/2));
 }
 
 function updateProjectImageSize(){
