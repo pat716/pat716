@@ -1,0 +1,1 @@
+Here the user can view their friends' donations. In addition to liking and commenting on these posts, the user may also see a friend donating to a charity they find interesting, which they might consider selecting for future donations.

@@ -1,0 +1,1 @@
+This shows the user's personal donation feed, showing contributions that they themselves have made over time. We thought that a small, lightweight social network component to the app would encourage people to donate more and share details about their favorite charities, as well as allow them to see posts and updates from the recipients of their donations.

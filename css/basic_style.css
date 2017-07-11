@@ -16,14 +16,6 @@ body{
     margin-bottom: 20px;
 }
 
-.row-eq-height {
-    /*
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display:         flex; */
-}
-
 #modalImageContainer{
     display: none;
     position: fixed;
@@ -41,7 +33,7 @@ body{
     width: fit-content;
     margin: auto;
     height: fit-content;
-    max-height: 95%;
+    max-height: 90%;
     padding: 10px;
     background-color: #FAFAFA;
     border-radius: 5px;

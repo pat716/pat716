@@ -1,0 +1,1 @@
+My favorite part of this project was the requirement that we come up with our own creative feature to implement. My app included a "spray-paint mode" which simulates the powdery texture and dripping effects of painting on a wall with a spray can. A slider controls the intensity, which was near its lowest when these first few strokes were made.

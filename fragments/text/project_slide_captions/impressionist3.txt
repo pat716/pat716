@@ -1,3 +1,3 @@
-Now that a few strokes have been made on the right hand side of the screen, you can see what kind of strokes are
+Now that a few strokes have been made on the right hand side of the screen, you can see what kind of results are
 produced. The radius of each mark changes according to how quickly the user is moving their finger across the screen,
 so small, slow movements can be used to produce fine detail in certain areas.

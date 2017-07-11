@@ -1,0 +1,1 @@
+Finally, the "Personal" tab shows the user's individual history with this organization, including how much they've donated and over how long. Below this (not shown here) is a list of the user's donations to this recipient.

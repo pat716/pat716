@@ -1,1 +1,1 @@
-The home screen denotes the several different areas of the app.
+The home screen, shown after the splash screen, denotes the different areas of the app. Our goal was to split up the dozen or so different tasks we envisioned into four main categories in order to simplify navigation for the user.
