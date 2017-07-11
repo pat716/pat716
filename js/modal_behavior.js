@@ -16,7 +16,7 @@ function hideModalImage(){
     var modalContainer = $("#modalImageContainer");
     modalContainer.fadeOut(modalFadeDuration, modalFadeEasing, function () {
         modalContainer.css("display", "none");
-        modalContainer.removeAttr("src");
+        modalContainer.attr("src", "");
     });
 }
 
