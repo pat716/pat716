@@ -7,6 +7,7 @@ $(window).on("resize", function () {
     updateDonationTextTopMargin();
     updateModalImageContainerProperties();
     updateProjectImageSize();
+    updateVisualizerVideoSize();
 });
 
 

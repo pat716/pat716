@@ -127,4 +127,51 @@
         <div class="col-lg-1 col-md-1 main-content-padding"></div>
     </div>
     <div class="bottom-padding"></div>
+    <div id="visualizerContentRow" class="row">
+        <a name="visualizer"></a>
+        <div class="col-lg-1 col-md-1 main-content-padding"></div>
+        <div class="col-lg-10 col-md-10">
+            <div class="main-content-foreground-element main-content-foreground-element-full-width">
+                <p class="lead main-content-text-lead">Audio Visualizer (Java/Processing, Personal Project)</p>
+                <hr>
+                <div class="row project-content-row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                <div id="visualizerProjectVideoContainer" class="video-container">
+                                    <iframe
+                                            id="visualizerProjectVideo"
+                                            class="project-video"
+                                            onload="updateVisualizerVideoSize()"
+                                            width="560"
+                                            height="315"
+                                            src="https://www.youtube.com/embed/ec3xcX3jFXM"
+                                            frameborder="0"
+                                            allowfullscreen></iframe>
+                                </div>
+                                <div id="visualizerProjectText" class="project-slide-text">
+                                    This is captured video from an audio visualizer I've been working on using Java,
+                                    Processing, and the Minim library for audio I/O and analytics. Each individual
+                                    animated circle is set to respond to the amplitude of a specific frequency range,
+                                    with larger amplitudes propelling them outwards before gravity pulls them back
+                                    towards the center. The audio source used for this video is an MP3 file (one of my
+                                    favorite songs of all time, "Run Away With Me" by Carly Rae Jepsen) but the
+                                    visualizer can respond in real time to audio sampled from a microphone input. I
+                                    also added motion blur and bloom effects that I implemented myself to give it a
+                                    higher-quality feel.
+                                </div>
+                            </div>
+                            <div class="col-lg-1 col-md-1 col-sm-1"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1 main-content-padding"></div>
+    </div>
+    <div class="bottom-padding"></div>
 </div>

@@ -73,3 +73,8 @@ img.project-image{
 .project-slide-text{
     text-align: center;
 }
+
+#visualizerProjectVideo{
+    margin: auto;
+    margin-bottom: 30px;
+}

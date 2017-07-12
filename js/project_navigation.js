@@ -152,6 +152,16 @@ function updateProjectImageSize(){
     $("#donationProjectBackgroundImage").css("margin-left", $("#donationProjectImage").css("margin-left"));
 }
 
+function updateVisualizerVideoSize(){
+    var containerElement = $("#visualizerProjectVideoContainer"), videoElement = $("#visualizerProjectVideo");
+    var videoWidth = containerElement.width();
+    var videoHeight = videoWidth * (9.0/16.0);
+
+    console.log("Setting video size to " + videoWidth + "x" + videoHeight)
+    videoElement.width(videoWidth);
+    videoElement.height(videoHeight);
+}
+
 function updateVerticalMargins(){
     updateButtonVerticalMargins();
     updateDonationTextTopMargin();
