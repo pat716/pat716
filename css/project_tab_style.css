@@ -74,7 +74,11 @@ img.project-image{
     text-align: center;
 }
 
-#visualizerProjectVideo{
+.project-video{
     margin: auto;
+    margin-bottom: 30px;
+}
+
+#visualizerProjectText{
     margin-bottom: 30px;
 }
