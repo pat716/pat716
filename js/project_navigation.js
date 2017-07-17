@@ -5,6 +5,10 @@
 var impressionistSlide = 0, impressionistSlideCount = 8, donationSlide = 0, donationSlideCount = 9;
 var projectSlideFadeDuration = 400, projectSlideFadeEasing = "swing";
 
+function getCurrentBootstrapSize(){
+    return $('.device-check:visible').attr('data-device');
+}
+
 function projectTabSetup(){
     impressionistSlide = 0;
     donationSlide = 0;
@@ -138,9 +142,14 @@ function updateButtonVerticalMargins(){
 }
 
 function updateDonationTextTopMargin(){
-    var donationImageHeight = $("#donationProjectImage").height(),
+    var bootstrapGridMode = getCurrentBootstrapSize(), donationImageHeight = $("#donationProjectImage").height(),
         donationTextElement = $("#donationProjectText");
-    donationTextElement.css("margin-top", Math.max(0, donationImageHeight/2 - donationTextElement.height()/2));
+
+    if(bootstrapGridMode === "xs" || bootstrapGridMode === "sm"){
+        donationTextElement.css("margin-top", 30);
+    } else {
+        donationTextElement.css("margin-top", Math.max(0, donationImageHeight/2 - donationTextElement.height()/2));
+    }
 }
 
 function updateProjectImageSize(){
@@ -211,7 +220,6 @@ function loadPrevSlide(projectId){
     decrementSlide(projectId);
     updateButtonsForProject(projectId);
 }
-
 
 function launchModalImageForCurrentSlide(projectId){
     $("#modalImage").attr("src", getImageUrlForProjectPanelState(projectId, getSlideNum(projectId)));
