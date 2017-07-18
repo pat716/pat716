@@ -52,6 +52,10 @@ button.project-nav-button:disabled:active{
     margin-bottom: 30px;
 }
 
+#donationProjectImage{
+    max-height: 50%;
+}
+
 .img-transition{
     position: relative;
     margin: 0 auto;

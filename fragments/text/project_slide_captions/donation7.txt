@@ -1,1 +1,1 @@
-The "Data" tab shows various analytics about the charity, such as how they have been rated by CharityNavigator and how their donations are spent. A user might not want to donate to an organization if a relatively large amount of donations are spent on things such as marketing and fundraisers.
+The "Data" tab shows various analytics about the charity, such as how they have been rated by CharityNavigator and how their donations are spent. A user might not want to donate to an organization if a large percentage is spent on things such as marketing and fundraisers.

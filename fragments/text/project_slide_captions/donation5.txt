@@ -1,1 +1,1 @@
-The "Charity" section of the feed is where users can see updates from charities they donate to, or ones that they have chosen to follow. We thought this could provide additional incentives for users to donate more, as they could read about or see photos of how their donations are being used from time to time.
+The "Charity" section of the feed is where users can see updates from charities they donate to or follow, as users would likely respond well to seeing how their donations are being used from time to time.
