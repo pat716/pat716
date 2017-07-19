@@ -185,9 +185,11 @@ function changeProjectImage(projectId, direction){
     var newImgUrl = getImageUrlForProjectPanelState(projectId, newSlideNum),
         preloadImgUrl = getImageUrlForProjectPanelState(projectId, preloadSlideNum);
 
+    backgroundImgElement.finish();
     if(backgroundImgElement.attr("src") !== newImgUrl){
         backgroundImgElement.attr("src", newImgUrl);
     }
+
     backgroundImgElement.fadeIn(projectSlideFadeDuration, projectSlideFadeEasing, function () {
         imgElement.attr("src", newImgUrl);
         backgroundImgElement.fadeOut(0, projectSlideFadeEasing);
@@ -199,6 +201,7 @@ function changeProjectText(projectId, direction){
     var textElement = $("#" + projectId + "ProjectText");
     var newText = getTextForProjectPanelState(projectId,
         getBoundedSlideNum(projectId, getSlideNum(projectId) + direction));
+    textElement.finish();
     textElement.fadeOut(projectSlideFadeDuration/2, projectSlideFadeEasing, function () {
         textElement.html(newText);
         if(projectId === "donation") updateDonationTextTopMargin(false);

@@ -9,6 +9,7 @@ var modalMargin = 20, modalPadding = 10;
 function showModalImage(){
     var modalContainer = $("#modalImageContainer");
     modalContainer.css("display", "block");
+    modalContainer.finish();
     modalContainer.fadeOut(0, modalFadeEasing, function () {
         modalContainer.fadeIn(modalFadeDuration, modalFadeEasing);
     });
@@ -16,6 +17,7 @@ function showModalImage(){
 
 function hideModalImage(){
     var modalContainer = $("#modalImageContainer");
+    modalContainer.finish();
     modalContainer.fadeOut(modalFadeDuration, modalFadeEasing, function () {
         modalContainer.css("display", "none");
         modalContainer.attr("src", "");
