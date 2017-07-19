@@ -20,6 +20,14 @@ function onClickNavbarElement(elementId){
     loadPageContent();
 }
 
+function showNavBar(){
+    $("#mainNavBar").fadeIn(0);
+}
+
+function hideNavBar(){
+    $("#mainNavBar").fadeOut(0);
+}
+
 function loadPageContent(){
     var mainContent = "", mainContentContainer = $("#mainContentContainer");
     switch(currentPageContent){

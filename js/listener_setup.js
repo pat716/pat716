@@ -10,4 +10,18 @@ $(window).on("resize", function () {
     updateVisualizerVideoSize();
 });
 
+var lastScrollPosition = 0;
+$(window).scroll(function () {
+   var newScrollPosition = $(this).scrollTop();
+   var navbarElement = $("#mainNavBar");
+   var navbarHeight = parseInt(navbarElement.height()), currentTop = parseInt(navbarElement.css("top"));
+   var newNavbarTop = Math.min(0, Math.max(-navbarHeight, currentTop + (lastScrollPosition - newScrollPosition)));
+   navbarElement.css("top", newNavbarTop);
+   if(newNavbarTop === -navbarHeight){
+       hideNavBar();
+   } else {
+       showNavBar();
+   }
+   lastScrollPosition = newScrollPosition;
+});
 
