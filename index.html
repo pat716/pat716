@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/navbar_style.css">
     <link rel="stylesheet" href="css/project_tab_style.css">
     <link rel="stylesheet" href="css/main_content_style.css">
+    <link rel="stylesheet" href="css/contact_tab_style.css">
 
     <!--
     WHITE: #FAFAFA
@@ -34,11 +35,10 @@
     <script src="js/project_navigation.js"></script>
     <script src="js/modal_behavior.js"></script>
 </head>
-<body onload="loadPageContent('navBarAbout')">
+<body onload="loadPageContent()">
 <div id="modalImageContainer" class="modal pull-center" onclick="hideModalImage()">
     <div id="modalImageVisibleContainer">
-            <img class="img-responsive" id="modalImage" onload="updateModalImageContainerProperties()">
-
+        <img class="img-responsive" id="modalImage" onload="updateModalImageContainerProperties()">
     </div>
 </div>
 <nav class="navbar navbar-default navbar-fixed-top">

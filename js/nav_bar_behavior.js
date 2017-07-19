@@ -2,6 +2,8 @@
  * Created by psweeney on 3/28/17.
  */
 
+var currentPageContent = "navBarAbout";
+
 function onClickNavbarElement(elementId){
     var former = $(".active"), current = $("#" + elementId);
     former.removeClass("active");
@@ -14,13 +16,13 @@ function onClickNavbarElement(elementId){
     current.addClass("navbar-active");
     */
 
-
-    loadPageContent(elementId);
+    currentPageContent = elementId;
+    loadPageContent();
 }
 
-function loadPageContent(elementId){
+function loadPageContent(){
     var mainContent = "", mainContentContainer = $("#mainContentContainer");
-    switch(elementId){
+    switch(currentPageContent){
         case "navBarAbout":
             mainContent = getMainContentElement(getAboutContent());
             break;
@@ -35,7 +37,7 @@ function loadPageContent(elementId){
     mainContentContainer.empty();
     mainContentContainer.append(mainContent);
 
-    if(elementId === "navBarProjects"){
+    if(currentPageContent === "navBarProjects"){
         projectTabSetup();
     }
 }

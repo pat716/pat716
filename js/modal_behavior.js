@@ -2,6 +2,7 @@
  * Created by psweeney on 6/29/17.
  */
 
+
 var modalFadeDuration = 200, modalFadeEasing = "swing";
 var modalMargin = 20, modalPadding = 10;
 

@@ -1,0 +1,26 @@
+a.contact-link{
+    text-decoration: none;
+}
+
+div.contact-card{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+div.contact-card:hover{
+    box-shadow: 0 1px 12px rgba(0, 2, 25, .2);
+    background: linear-gradient(0deg, rgba(0, 2, 25, .005), white);
+}
+
+img.contact-thumbnail{
+    display: inline;
+    padding: 3px;
+    margin-right: 20px;
+    max-width: 64px;
+    max-height: 64px;
+}
+
+.contact-card-text{
+    vertical-align: middle;
+}
